@@ -1,0 +1,31 @@
+<div class="ip-info-container">
+  <div class="info-item">
+    <span class="ip-info-item__title">IP Address</span>
+
+    <span class="ip-info-item__value">{{ ipDetails.ip }}</span>
+  </div>
+  <div class="separator"></div>
+  <div class="info-item">
+    <span class="ip-info-item__title">Location</span>
+
+    <span class="ip-info-item__value"
+      >{{ ipDetails.location?.region }}</span
+    >
+  </div>
+  <div class="separator"></div>
+
+  <div class="info-item">
+    <span class="ip-info-item__title">Timezone</span>
+
+    <span class="ip-info-item__value">
+      UTC {{ ipDetails.location?.timezone }}</span
+    >
+  </div>
+  <div class="separator"></div>
+
+  <div class="info-item">
+    <span class="ip-info-item__title">ISP</span>
+
+    <span class="ip-info-item__value">{{ ipDetails.isp }}</span>
+  </div>
+</div>
