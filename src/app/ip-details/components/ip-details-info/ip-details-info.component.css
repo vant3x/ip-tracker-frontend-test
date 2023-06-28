@@ -42,7 +42,7 @@
   color: var(--verydarkgray);
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) and (max-width: 576px) {
   .ip-info-container {
     flex-direction: column;
     height: 90%;
