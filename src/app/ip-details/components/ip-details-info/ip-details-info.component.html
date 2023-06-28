@@ -1,36 +1,39 @@
 <div class="ip-info-container">
-    <div *ngIf="loading; else elseBlock">
-
-        <ng-content></ng-content>
-        </div>
-        <ng-template #elseBlock>
-
-  <div class="info-item">
-    <span class="ip-info-item__title">IP Address</span>
-
-    <span class="ip-info-item__value">{{ ipDetails.ip }}</span>
+  <div *ngIf="loading; else elseBlock">
+    <ng-content></ng-content>
   </div>
-  <div class="separator"></div>
-  <div class="info-item">
-    <span class="ip-info-item__title">Location</span>
+  <ng-template #elseBlock>
+    <div class="info-item">
+      <span class="ip-info-item__title">IP Address</span>
 
-    <span class="ip-info-item__value">{{ ipDetails.location?.region }}</span>
-  </div>
-  <div class="separator"></div>
+      <span class="ip-info-item__value">{{ ipDetails.ip }}</span>
+    </div>
+    <div class="separator"></div>
+    <div class="info-item">
+      <span class="ip-info-item__title">Location</span>
 
-  <div class="info-item">
-    <span class="ip-info-item__title">Timezone</span>
+      <span class="ip-info-item__value">{{ ipDetails.location?.region }}</span>
+    </div>
+    <div class="separator"></div>
 
-    <span class="ip-info-item__value">
-      UTC {{ ipDetails.location?.timezone }}</span
-    >
-  </div>
-  <div class="separator"></div>
+    <div class="info-item">
+      <span class="ip-info-item__title">Timezone</span>
 
-  <div class="info-item">
-    <span class="ip-info-item__title">ISP</span>
+      <span class="ip-info-item__value">
+        UTC
+        {{
+          ipDetails.offset
+            ? (ipDetails.offset >= 0 ? "+" : "") + ipDetails.offset + ":00"
+            : ""
+        }}</span
+      >
+    </div>
+    <div class="separator"></div>
 
-    <span class="ip-info-item__value">{{ ipDetails.isp }}</span>
-  </div>
-        </ng-template>
+    <div class="info-item">
+      <span class="ip-info-item__title">ISP</span>
+
+      <span class="ip-info-item__value">{{ ipDetails.isp }}</span>
+    </div>
+  </ng-template>
 </div>

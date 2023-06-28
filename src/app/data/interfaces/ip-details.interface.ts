@@ -8,6 +8,7 @@ export interface IpDetailsResponse {
         lat: number;
         lng: number;
     };
+    offset?: number;
     isp?: string;
     as?: {
         domain: string;

@@ -18,6 +18,9 @@ export class IpInfoRequestService {
       )
       .pipe(
         map((response) => {
+          const timezone = response.location?.timezone;
+          const offset = Number(timezone?.split(':')[0]);
+          response.offset = offset;
           this.sharedService.setIpDetails(response);
           return response;
         })
@@ -31,6 +34,9 @@ export class IpInfoRequestService {
       )
       .pipe(
         map((response) => {
+          const timezone = response.location?.timezone;
+          const offset = Number(timezone?.split(':')[0]);
+          response.offset = offset;
           this.sharedService.setIpDetails(response);
           return response;
         })

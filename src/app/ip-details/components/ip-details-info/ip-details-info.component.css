@@ -27,13 +27,14 @@
 .separator {
   align-self: center;
   width: 1px;
-  height: 100px;
-  background-color: var(--darkgray);
+  height: 50%;
+  background-color: #ccc;
 }
 .ip-info-item__title {
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--darkgray);
+  font-weight:500;
 }
 
 .ip-info-item__value {
