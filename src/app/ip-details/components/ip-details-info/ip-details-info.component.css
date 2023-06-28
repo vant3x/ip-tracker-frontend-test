@@ -80,7 +80,7 @@
 @media (max-width: 576px) {
     .ip-info-container {
         flex-direction: column;
-        height: 90%;
+        height: 58%;
         min-width: 80vw;
         width: 100%;
         margin:0 auto;
@@ -98,10 +98,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2rem 3.5rem;
+        padding: 1rem 3.5rem;
         width: 100%;
       }
-    
+      .ip-info-item__title {
+        text-transform: uppercase;
+   
+
+      }
+      
       .ip-info-item__value {
         font-size: 22px;
         font-weight: 500;

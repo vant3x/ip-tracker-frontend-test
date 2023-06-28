@@ -1,12 +1,29 @@
 <div class="search-bar-container">
-  <input
-    placeholder="Search for any IP address or domain"
-    class="search-bar-container__input"
-    type="text"
-    [(ngModel)]="ipValue"
-    required pattern="^((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$"
-  />
-  <button class="search-bar-container__btn" (click)="onButtonClick()">
-    <img src="assets/images/icons/icon-arrow.svg" alt="" />
-  </button>
+  <form [formGroup]="searchForm" (ngSubmit)="onButtonClick()">
+    <input
+      placeholder="Search for any IP address or domain"
+      class="search-bar-container__input"
+      type="text"
+      formControlName="ipValue"
+      required
+      pattern="^((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$"
+    />
+    <button
+      class="search-bar-container__btn"
+      (click)="onButtonClick()"
+      [disabled]="searchForm.invalid"
+      type="submit"
+    >
+      <img src="assets/images/icons/icon-arrow.svg" alt="" />
+    </button>
+    
+  </form>
+  <div *ngIf="searchForm?.get('ipValue')?.invalid && (searchForm?.get('ipValue')?.dirty || searchForm?.get('ipValue')?.touched)">
+    <div *ngIf="searchForm?.get('ipValue')?.hasError('required')">
+      El campo es requerido
+    </div>
+    <div *ngIf="searchForm?.get('ipValue')?.hasError('ipDomainInvalid')">
+      Ingresa una dirección IP o un dominio valido
+    </div>
+  </div>
 </div>
