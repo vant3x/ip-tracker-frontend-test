@@ -42,7 +42,7 @@
   color: var(--verydarkgray);
 }
 
-@media (min-width: 375px) and (max-width: 576px) {
+@media (max-width: 375px)  {
   .ip-info-container {
     flex-direction: column;
     height: 90%;
@@ -75,4 +75,39 @@
   .separator {
     display: none;
   }
+}
+
+@media (max-width: 576px) {
+    .ip-info-container {
+        flex-direction: column;
+        height: 90%;
+        min-width: 80vw;
+        width: 100%;
+        margin:0 auto;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transform: translate(-50%, -20%);
+        z-index: 9999;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.215);
+        text-align: center;
+      }
+    
+      .info-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 3.5rem;
+        width: 100%;
+      }
+    
+      .ip-info-item__value {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--verydarkgray);
+      }
+      .separator {
+        display: none;
+      }
 }

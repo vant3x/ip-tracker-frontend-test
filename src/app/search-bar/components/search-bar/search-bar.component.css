@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 375px) and (max-width: 576px) {
+@media (max-width: 375px)  {
   .search-bar-container {
     margin-bottom: 40px;
     width: 100%;
@@ -48,4 +48,31 @@
     border-radius: 0px 14px 14px 0px;
     cursor: pointer;
   }
+}
+
+@media (max-width: 576px) {
+    .search-bar-container {
+        margin-bottom: 40px;
+        width: 100%;
+        margin-top: 10px;
+      }
+    
+      .search-bar-container__input {
+        font-size: 18px;
+        border-radius: 14px 0px 0px 14px;
+        padding: 14px 22px;
+        width:68%;
+        border: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+    
+      .search-bar-container__btn {
+        background-color: black;
+        height: 51px;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 0px 14px 14px 0px;
+        cursor: pointer;
+      }
 }
