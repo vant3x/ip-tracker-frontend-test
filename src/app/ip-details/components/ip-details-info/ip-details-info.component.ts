@@ -6,21 +6,24 @@ import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-ip-details-info',
   templateUrl: './ip-details-info.component.html',
-  styleUrls: ['./ip-details-info.component.css']
+  styleUrls: ['./ip-details-info.component.css'],
 })
 export class IpDetailsInfoComponent {
-  ipAddress: string = '';
   ipDetails: IpDetailsResponse = {};
+  loading: boolean = false;
 
-  constructor(private ipInfoRequestService: IpInfoRequestService, private sharedService: SharedService) {
-
-  }
+  constructor(
+    private ipInfoRequestService: IpInfoRequestService,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
-    this.sharedService.ipDetails$.subscribe(ipDetails => {
+    this.sharedService.ipDetails$.subscribe((ipDetails) => {
       this.ipDetails = ipDetails;
     });
-      console.log(this.ipAddress)
-  }
 
+    this.sharedService.loading$.subscribe((loadingValue) => {
+      this.loading = loadingValue;
+    });
+  }
 }

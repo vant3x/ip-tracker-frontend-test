@@ -5,14 +5,17 @@ import { HeroHeaderComponent } from './components/hero-header/hero-header.compon
 import { SearchBarModule } from '../search-bar/search-bar.module';
 import { IpDetailsModule } from '../ip-details/ip-details.module';
 import { MapDetailModule } from '../map-detail/map-detail.module';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
+    LoaderComponent,
     LayoutComponent,
-    HeroHeaderComponent
+    HeroHeaderComponent,
   ],
   exports: [
-    LayoutComponent
+    LoaderComponent,
+    LayoutComponent,
   ],
   imports: [
     CommonModule,

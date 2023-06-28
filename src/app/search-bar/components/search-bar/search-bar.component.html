@@ -4,6 +4,7 @@
     class="search-bar-container__input"
     type="text"
     [(ngModel)]="ipValue"
+    required pattern="^((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$"
   />
   <button class="search-bar-container__btn" (click)="onButtonClick()">
     <img src="assets/images/icons/icon-arrow.svg" alt="" />

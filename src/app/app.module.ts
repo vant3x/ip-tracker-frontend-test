@@ -13,8 +13,8 @@ import { ErrorMessageComponent } from './components/error/error-message/error-me
     ErrorMessageComponent,
   ],
   imports: [
-    BrowserModule,
     SharedModule,
+    BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
